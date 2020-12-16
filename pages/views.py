@@ -58,7 +58,7 @@ def contact(request):
         send_mail(
                 email_subject,
                 message_body,
-                'pinlacjohncarlo1@gmail.com',
+                'pinlac.johncarlo@gmail.com',
                 [admin_email],
                 fail_silently=False,
             )

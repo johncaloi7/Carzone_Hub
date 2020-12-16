@@ -27,7 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['thecarzonehub.herokuapp.com', 'thecarzonehub.com' 'www.thecarzonehub.com']
+ALLOWED_HOSTS = ['thecarzonehub.herokuapp.com', 'thecarzonehub.com', 'www.thecarzonehub.com', 'localhost']
 
 LOGIN_REDIRECT_URL = 'dashboard'
 
@@ -161,11 +161,18 @@ MESSAGE_TAGS = {
 SITE_ID = 3
 
 # Email sending
-EMAIL_HOST = 'smtp.gmail.com'
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'pinlacjohncarlo1@gmail.com'
+# EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
+# EMAIL_USE_TLS = True
+
+EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'pinlacjohncarlo1@gmail.com'
-EMAIL_HOST_PASSWORD = config('EMAIL_PASSWORD')
 EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = config('SENDGRID_API_KEY')
 
 # Whitenoise settings
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
